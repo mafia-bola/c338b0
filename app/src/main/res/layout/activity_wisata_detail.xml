@@ -17,89 +17,115 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/fixed_background"
+            android:src="@drawable/background2nd"
             android:contentDescription="@string/descBackground" />
 
-        <LinearLayout
-            android:orientation="vertical"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
-
-            <ScrollView
-                android:id="@+id/scroll"
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="vertical">
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/gradient"
+                android:contentDescription="@string/descBackground" />
 
-                <LinearLayout
-                    android:orientation="vertical"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar" />
+
+                <ScrollView
+                    android:id="@+id/scroll"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="20dp">
+                    android:scrollbars="vertical">
 
-                    <com.uncopt.android.widget.text.justify.JustifiedTextView
-                        android:id="@+id/txtWisata"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:text="Nama Wisata"/>
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="20dp">
 
-                    <ListView
-                        android:id="@+id/lv"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:layout_marginBottom="5dp"/>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtWisata"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#000"
+                            android:layout_marginBottom="20dp"
+                            android:text="Nama Wisata"/>
 
-                    <fragment
-                        android:id="@+id/map"
-                        android:name="com.google.android.gms.maps.SupportMapFragment"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:layout_marginBottom="5dp"/>
+                        <ListView
+                            android:id="@+id/lv"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginBottom="20dp"/>
 
-                    <com.uncopt.android.widget.text.justify.JustifiedTextView
-                        android:id="@+id/txtViewDesa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Nama Desa"
-                        android:layout_marginBottom="5dp"/>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtViewDesa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nama Desa"
+                            android:textColor="#000"
+                            android:layout_marginBottom="5dp"/>
 
-                    <com.uncopt.android.widget.text.justify.JustifiedTextView
-                        android:id="@+id/txtAlamatWisata"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Alamat Wisata"
-                        android:layout_marginBottom="5dp"/>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtAlamatWisata"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Alamat Wisata"
+                            android:textColor="#000"
+                            android:layout_marginBottom="20dp"/>
 
-                    <TextView
-                        android:id="@+id/txtSejarahWisata"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sejarah Wisata"
-                        android:layout_marginBottom="5dp"/>
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginBottom="20dp"/>
 
-                    <TextView
-                        android:id="@+id/txtDemografi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Demografi"
-                        android:layout_marginBottom="5dp"/>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtSejarahWisata"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sejarah Wisata"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="#000" />
 
-                    <TextView
-                        android:id="@+id/txtPotensi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Potensi"/>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtDemografi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Demografi"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="#000" />
 
-                </LinearLayout>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtPotensi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:layout_marginBottom="20dp"
+                            android:text="Potensi"/>
 
-            </ScrollView>
+                    </LinearLayout>
 
-        </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </FrameLayout>
 

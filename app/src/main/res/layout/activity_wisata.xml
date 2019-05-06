@@ -17,27 +17,39 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/fixed_background"
+            android:src="@drawable/background2nd"
             android:contentDescription="@string/descBackground" />
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigation"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff"
-                app:itemIconTint="#000"
-                app:itemTextColor="#000"
-                android:layout_marginBottom="20dp"
-                app:menu="@menu/tab_item" />
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/gradient"
+                android:contentDescription="@string/descBackground" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar" />
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    app:itemIconTint="#000"
+                    app:itemTextColor="#000"
+                    android:layout_marginBottom="20dp"
+                    app:menu="@menu/tab_item" />
 
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/sv"
@@ -49,18 +61,20 @@
 
                 </androidx.appcompat.widget.SearchView>
 
-            <ListView
-                android:id="@+id/lv"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <ListView
+                    android:id="@+id/lv"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            </ListView>
+                </ListView>
 
-        </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
 
     </FrameLayout>
 

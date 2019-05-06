@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -45,7 +47,12 @@ public class KegiatanDetail extends AppCompatActivity {
         String foto = detail.getExtras().getString("Foto");
 
         txtNamaKegiatan.setText(nama_kegiatan);
-        txtDeskripsi.setText(deskripsi);
         PicassoClient.downloadImage(this, foto, imageView);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            txtNamaKegiatan.setText(Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            txtNamaKegiatan.setText(Html.fromHtml(deskripsi));
+        }
     }
 }

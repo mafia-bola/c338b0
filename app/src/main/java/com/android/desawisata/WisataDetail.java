@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,7 +24,7 @@ import com.uncopt.android.widget.text.justify.JustifiedTextView;
 public class WisataDetail extends AppCompatActivity implements OnMapReadyCallback {
 
     ListView lv;
-    TextView txtSejarahWisata, txtDemografi, txtPotensi;
+    JustifiedTextView txtSejarahWisata, txtDemografi, txtPotensi;
     GoogleMap mMap;
     Toolbar toolbar;
     JustifiedTextView txtViewDesa, txtAlamatWisata, txtWisata;
@@ -52,12 +55,27 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         String potensi = detail.getExtras().getString("Potensi");
         final int tempat_wisata_id = detail.getExtras().getInt("WisataID");
 
-        txtViewDesa.setText(namaDesa);
-        txtAlamatWisata.setText(alamatWisata);
-        txtSejarahWisata.setText(sejarahWisata);
-        txtDemografi.setText(demografi);
-        txtPotensi.setText(potensi);
+        txtViewDesa.setText("Nama Desa : "+namaDesa);
+        txtAlamatWisata.setText("Alamat Lokasi : "+alamatWisata);
         txtWisata.setText(namaWisata);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            txtSejarahWisata.setText(Html.fromHtml(sejarahWisata, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            txtSejarahWisata.setText(Html.fromHtml(sejarahWisata));
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            txtDemografi.setText(Html.fromHtml(demografi, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            txtDemografi.setText(Html.fromHtml(demografi));
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            txtPotensi.setText(Html.fromHtml(potensi, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            txtPotensi.setText(Html.fromHtml(potensi));
+        }
 
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
