@@ -5,7 +5,7 @@
     <item
         android:id="@+id/desa"
         android:enabled="true"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_home_white_24dp"
         android:title="Item"
         android:visible="true"
         app:showAsAction="always" />

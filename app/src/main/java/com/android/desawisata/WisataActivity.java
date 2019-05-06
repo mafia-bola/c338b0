@@ -63,6 +63,7 @@ public class WisataActivity extends AppCompatActivity {
 
         txtNamaWisata = findViewById(R.id.txtNamaWisata);
         txtNamaDesa = findViewById(R.id.txtNamaDesa);
+        sv = findViewById(R.id.sv);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -148,6 +149,23 @@ public class WisataActivity extends AppCompatActivity {
 
         lv = findViewById(R.id.lv);
         new WisataDownloader(WisataActivity.this, urlAddress, lv).execute();
+
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                String search = newText;
+                String url = getString(R.string.urlAddress);
+                final String urlAddress = url+"api/wisata/"+search;
+                new WisataDownloader(WisataActivity.this, urlAddress, lv).execute();
+
+                return false;
+            }
+        });
     }
 
     @Override

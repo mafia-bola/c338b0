@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.desawisata.R;
@@ -46,6 +47,7 @@ public class WisataAdapter extends BaseAdapter {
 
         TextView txtNamaWisata = convertView.findViewById(R.id.txtNamaWisata);
         TextView txtNamaDesa = convertView.findViewById(R.id.txtNamaDesa);
+        ImageView backgroundDesa = convertView.findViewById(R.id.backgroundDesa);
 
         final DesaWisata dw = (DesaWisata) this.getItem(position);
         txtNamaWisata.setText(dw.getNama_wisata());

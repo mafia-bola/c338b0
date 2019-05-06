@@ -63,6 +63,7 @@ public class KegiatanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kegiatan);
 
         txtNamaKegiatan = findViewById(R.id.txtNamaKegiatan);
+        sv = findViewById(R.id.sv);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -148,6 +149,23 @@ public class KegiatanActivity extends AppCompatActivity {
 
         lv = findViewById(R.id.lv);
         new KegiatanDownloader(KegiatanActivity.this, urlAddress, lv).execute();
+
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                String search = newText;
+                String url = getString(R.string.urlAddress);
+                final String urlAddress = url+"api/kegiatan/"+search;
+                new KegiatanDownloader(KegiatanActivity.this, urlAddress, lv).execute();
+
+                return false;
+            }
+        });
     }
 
     @Override

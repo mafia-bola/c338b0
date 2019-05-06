@@ -6,40 +6,52 @@
     android:layout_width="match_parent"
     android:layout_height="125dp">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroundDesa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_margin="20dp">
 
-            <com.uncopt.android.widget.text.justify.JustifiedTextView
-                android:id="@+id/txtNamaWisata"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="horizontal"
-                android:text="Nama Wisata"/>
+                android:layout_height="wrap_content">
+
+                <com.uncopt.android.widget.text.justify.JustifiedTextView
+                    android:id="@+id/txtNamaWisata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:text="Nama Wisata"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.uncopt.android.widget.text.justify.JustifiedTextView
+                    android:id="@+id/txtNamaDesa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:text="Lokasi"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.uncopt.android.widget.text.justify.JustifiedTextView
-                android:id="@+id/txtNamaDesa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scrollbars="vertical"
-                android:text="Lokasi"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </androidx.cardview.widget.CardView>
