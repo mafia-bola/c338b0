@@ -17,63 +17,79 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/fixed_background"
+            android:src="@drawable/background3rd"
             android:contentDescription="@string/descBackground" />
 
-        <LinearLayout
-            android:orientation="vertical"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
-
-            <ScrollView
-                android:id="@+id/scroll"
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="vertical">
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/gradient"
+                android:contentDescription="@string/descBackground" />
 
-                <LinearLayout
-                    android:orientation="vertical"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar" />
+
+                <ScrollView
+                    android:id="@+id/scroll"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp">
+                    android:scrollbars="vertical">
 
-                    <ImageView
-                        android:scaleType="fitXY"
-                        android:id="@+id/imageKegiatan"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp">
 
-                    <com.uncopt.android.widget.text.justify.JustifiedTextView
-                        android:id="@+id/txtNamaKegiatan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:text="Nama Kegiatan"
-                        android:layout_marginBottom="10dp"/>
+                        <ImageView
+                            android:scaleType="fitXY"
+                            android:id="@+id/imageKegiatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginBottom="10dp"/>
 
-                    <com.uncopt.android.widget.text.justify.JustifiedTextView
-                        android:id="@+id/txtDeskripsi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:text="Deskripsi"
-                        android:layout_marginBottom="20dp"/>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtNamaKegiatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#000"
+                            android:text="Nama Kegiatan"
+                            android:layout_marginBottom="10dp"/>
 
-                </LinearLayout>
+                        <com.uncopt.android.widget.text.justify.JustifiedTextView
+                            android:id="@+id/txtDeskripsi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:text="Deskripsi"
+                            android:layout_marginBottom="20dp"/>
 
-            </ScrollView>
+                    </LinearLayout>
 
-        </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
 
     </FrameLayout>
 
