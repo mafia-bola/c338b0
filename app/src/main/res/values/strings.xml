@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Desa Wisata</string>
+
+    <string name="openDrawer">Drawer dibuka</string>
+    <string name="closeDrawer">Drawer ditutup</string>
+    <string name="descBackground">Background App</string>
+    <string name="mempersembahkan">Mempersembahkan</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="pencarian">Pencarian</string>
+
+    <string name="urlAddress">http://192.168.55.71/1d1c88/public/</string>
+
+</resources>
