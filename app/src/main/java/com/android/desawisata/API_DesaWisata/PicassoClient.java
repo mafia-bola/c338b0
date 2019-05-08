@@ -13,11 +13,11 @@ public class PicassoClient {
             Picasso
                     .with(c)
                     .load(urlAddress)
-                    .placeholder(R.drawable.fixed_background)
+                    .placeholder(R.drawable.image_not_found)
                     .fit()
                     .into(imageList);
         } else {
-            Picasso.with(c).load(R.drawable.fixed_background).into(imageList);
+            Picasso.with(c).load(R.drawable.image_not_found).into(imageList);
         }
     }
 }

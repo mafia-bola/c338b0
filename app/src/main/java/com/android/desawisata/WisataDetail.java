@@ -99,13 +99,14 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         Intent detail = this.getIntent();
+        String namaWisata = detail.getExtras().getString("NamaWisata");
         double lat = detail.getExtras().getDouble("Latitude");
         double lng = detail.getExtras().getDouble("Longitude");
 
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
         LatLng defaults = new LatLng(lat, lng);
-        mMap.addMarker(new MarkerOptions().position(defaults).title("Ditandai"));
+        mMap.addMarker(new MarkerOptions().position(defaults).title(namaWisata));
 
         float zoomLevel = 10.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaults, zoomLevel));

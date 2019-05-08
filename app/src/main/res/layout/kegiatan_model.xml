@@ -4,7 +4,7 @@
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="125dp">
+    android:layout_height="250dp">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:id="@+id/backgroundKegiatan"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"/>
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:orientation="vertical"
