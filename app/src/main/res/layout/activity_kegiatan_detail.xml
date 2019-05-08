@@ -53,8 +53,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp">
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp">
 
                         <ImageView
                             android:scaleType="fitXY"
@@ -65,7 +65,7 @@
                             android:layout_marginBottom="10dp"/>
 
                         <com.uncopt.android.widget.text.justify.JustifiedTextView
-                            android:id="@+id/txtNamaKegiatan"
+                            android:id="@+id/txtJudulKegiatan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"

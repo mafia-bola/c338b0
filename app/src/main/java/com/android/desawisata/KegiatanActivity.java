@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.android.desawisata.API_DesaWisata.KegiatanDownloader;
-import com.android.desawisata.API_DesaWisata.WisataDownloader;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.uncopt.android.widget.text.justify.JustifiedTextView;
@@ -62,7 +61,7 @@ public class KegiatanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kegiatan);
 
-        txtNamaKegiatan = findViewById(R.id.txtNamaKegiatan);
+        txtNamaKegiatan = findViewById(R.id.txtJudulKegiatan);
         sv = findViewById(R.id.sv);
 
         toolbar = findViewById(R.id.toolbar);

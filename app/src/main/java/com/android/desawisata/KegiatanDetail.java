@@ -15,7 +15,7 @@ import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 public class KegiatanDetail extends AppCompatActivity {
 
-    JustifiedTextView txtNamaKegiatan, txtDeskripsi;
+    JustifiedTextView txtJudulKegiatan, txtDeskripsi;
     ImageView imageView;
     Toolbar toolbar;
 
@@ -24,10 +24,15 @@ public class KegiatanDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kegiatan_detail);
 
-        txtNamaKegiatan = findViewById(R.id.txtNamaKegiatan);
+        txtJudulKegiatan = findViewById(R.id.txtJudulKegiatan);
         txtDeskripsi = findViewById(R.id.txtDeskripsi);
         imageView = findViewById(R.id.imageKegiatan);
         toolbar = findViewById(R.id.toolbar);
+
+        Intent detail = this.getIntent();
+        String nama_kegiatan = detail.getExtras().getString("NamaKegiatan");
+        String deskripsi = detail.getExtras().getString("Deskripsi");
+        String foto = detail.getExtras().getString("Foto");
 
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
@@ -39,20 +44,17 @@ public class KegiatanDetail extends AppCompatActivity {
                 finish();
             }
         });
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(nama_kegiatan);
 
-        Intent detail = this.getIntent();
-        String nama_kegiatan = detail.getExtras().getString("NamaKegiatan");
-        String deskripsi = detail.getExtras().getString("Deskripsi");
-        String foto = detail.getExtras().getString("Foto");
 
-        txtNamaKegiatan.setText(nama_kegiatan);
+        txtJudulKegiatan.setText(nama_kegiatan);
+        txtDeskripsi.setText(deskripsi);
         PicassoClient.downloadImage(this, foto, imageView);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            txtNamaKegiatan.setText(Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_LEGACY));
+            txtDeskripsi.setText(Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_LEGACY));
         } else {
-            txtNamaKegiatan.setText(Html.fromHtml(deskripsi));
+            txtDeskripsi.setText(Html.fromHtml(deskripsi));
         }
     }
 }

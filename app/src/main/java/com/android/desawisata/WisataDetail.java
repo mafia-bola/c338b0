@@ -87,13 +87,14 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
                 finish();
             }
         });
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(namaWisata);
 
         String link = getString(R.string.urlAddress);
         final String urlAddress = link+"api/wisata/"+tempat_wisata_id+"/foto";
 
         lv = findViewById(R.id.lv);
         new ImageDownloader(WisataDetail.this, urlAddress, lv).execute();
+        lv.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
     }
 
     @Override
