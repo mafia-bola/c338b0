@@ -8,6 +8,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="pencarian">Pencarian</string>
 
-    <string name="urlAddress">http://10.10.10.105/1d1c88/public/</string>
+    <string name="urlAddress">http://192.168.55.254/1d1c88/public/</string>
 
 </resources>

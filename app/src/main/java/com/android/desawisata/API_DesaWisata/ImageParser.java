@@ -2,7 +2,10 @@ package com.android.desawisata.API_DesaWisata;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -50,17 +53,15 @@ public class ImageParser extends AsyncTask<Void, Void, Boolean> {
 
         pd.dismiss();
         if (parsed){
-            ImageAdapter adapter = new ImageAdapter(c, desaWisata);
+            final ImageAdapter adapter = new ImageAdapter(c, desaWisata);
             lv.setAdapter(adapter);
+
         } else {
             Toast.makeText(c, "Data gagal di proses", Toast.LENGTH_SHORT).show();
         }
     }
 
     private Boolean parseData(){
-
-
-
         try {
             JSONArray ja = new JSONArray(jsonData);
             JSONObject jo;

@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.desawisata.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -78,6 +80,10 @@ public class WisataParser extends AsyncTask<Void, Void, Boolean> {
                 double lat = jo.getDouble("lat");
                 double lng = jo.getDouble("lng");
                 int tempat_wisata_id = jo.getInt("tempat_wisata_id");
+                String thumbnail = jo.getString("thumbnail");
+
+                String link = c.getString(R.string.urlAddress);
+                thumbnail = link+thumbnail;
 
                 dw = new DesaWisata();
                 dw.setId(id);
@@ -92,6 +98,7 @@ public class WisataParser extends AsyncTask<Void, Void, Boolean> {
                 dw.setLat(lat);
                 dw.setLng(lng);
                 dw.setTempat_wisata_id(tempat_wisata_id);
+                dw.setThumbnail(thumbnail);
 
                 desaWisata.add(dw);
             }

@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.MediaController;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.android.desawisata.API_DesaWisata.ImageDownloader;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,15 +22,19 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 public class WisataDetail extends AppCompatActivity implements OnMapReadyCallback {
-
     ListView lv;
     JustifiedTextView txtSejarahWisata, txtDemografi, txtPotensi;
     GoogleMap mMap;
     Toolbar toolbar;
     JustifiedTextView txtViewDesa, txtAlamatWisata, txtWisata;
+
+    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +97,11 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         getSupportActionBar().setTitle(namaWisata);
 
         String link = getString(R.string.urlAddress);
-        final String urlAddress = link+"api/wisata/"+tempat_wisata_id+"/foto";
+
+        final String urlAddress = link + "api/wisata/" + tempat_wisata_id + "/foto";
 
         lv = findViewById(R.id.lv);
         new ImageDownloader(WisataDetail.this, urlAddress, lv).execute();
-        lv.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
     }
 
     @Override
@@ -105,7 +112,6 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         double lng = detail.getExtras().getDouble("Longitude");
 
         mMap = googleMap;
-        // Add a marker in Sydney and move the camera
         LatLng defaults = new LatLng(lat, lng);
         mMap.addMarker(new MarkerOptions().position(defaults).title(namaWisata));
 
@@ -113,3 +119,4 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaults, zoomLevel));
     }
 }
+

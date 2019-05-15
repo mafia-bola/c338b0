@@ -52,6 +52,7 @@ public class WisataAdapter extends BaseAdapter {
         final DesaWisata dw = (DesaWisata) this.getItem(position);
         txtNamaWisata.setText(dw.getNama_wisata());
         txtNamaDesa.setText(dw.getNama_desa());
+        PicassoClient.downloadImage(c, dw.getThumbnail(), backgroundDesa);
 
         final String nama_desa = dw.getNama_desa();
         final String status = dw.getStatus();

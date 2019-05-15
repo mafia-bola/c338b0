@@ -9,6 +9,15 @@ public class DesaWisata {
     String nama_kegiatan, deskripsi, foto;
     String file_foto;
     String file_video;
+    String thumbnail;
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 
     public int getId() {
         return id;
