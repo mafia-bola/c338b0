@@ -16,6 +16,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.android.desawisata.API_DesaWisata.ImageDownloader;
+import com.android.desawisata.API_DesaWisata.VideoDownloader;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -28,13 +29,14 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 public class WisataDetail extends AppCompatActivity implements OnMapReadyCallback {
+
     ListView lv;
+    ListView videoList;
     JustifiedTextView txtSejarahWisata, txtDemografi, txtPotensi;
     GoogleMap mMap;
     Toolbar toolbar;
     JustifiedTextView txtViewDesa, txtAlamatWisata, txtWisata;
 
-    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,10 +100,13 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
 
         String link = getString(R.string.urlAddress);
 
-        final String urlAddress = link + "api/wisata/" + tempat_wisata_id + "/foto";
-
         lv = findViewById(R.id.lv);
+        final String urlAddress = link + "api/wisata/" + tempat_wisata_id + "/foto";
         new ImageDownloader(WisataDetail.this, urlAddress, lv).execute();
+
+        videoList = findViewById(R.id.videoList);
+        final String urlVideo = link + "api/wisata/" + tempat_wisata_id + "/video";
+        new VideoDownloader(WisataDetail.this, urlVideo, videoList).execute();
     }
 
     @Override
