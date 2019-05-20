@@ -139,6 +139,12 @@ public class WisataActivity extends AppCompatActivity {
                         startActivity(about);
                         finish();
                         break;
+                    case R.id.menuKalender:
+                        menuItem.setChecked(true);
+                        Intent kalender = new Intent(WisataActivity.this, KalenderActivity.class);
+                        startActivity(kalender);
+                        finish();
+                        break;
                 }
                 return false;
             }
@@ -166,24 +172,5 @@ public class WisataActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.actionbar1, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.kegiatan:
-                Intent kegiatan = new Intent(WisataActivity.this, KegiatanActivity.class);
-                startActivity(kegiatan);
-                finish();
-                return true;
-        }
-        return false;
     }
 }

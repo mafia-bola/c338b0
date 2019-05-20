@@ -6,7 +6,7 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WisataActivity">
+    tools:context=".KalenderActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/background2nd"
+            android:src="@drawable/background4th"
             android:contentDescription="@string/descBackground" />
 
         <FrameLayout
@@ -48,18 +48,7 @@
                     android:background="#fff"
                     app:itemIconTint="#000"
                     app:itemTextColor="#000"
-                    android:layout_marginBottom="20dp"
                     app:menu="@menu/tab_item" />
-
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/sv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:background="#fff"
-                    android:layout_marginEnd="20dp">
-
-                </androidx.appcompat.widget.SearchView>
 
                 <ListView
                     android:id="@+id/lv"

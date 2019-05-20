@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.android.desawisata.KegiatanDetail;
 import com.android.desawisata.R;
+import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 import java.util.ArrayList;
 
@@ -45,11 +46,13 @@ public class KegiatanAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(c).inflate(R.layout.kegiatan_model, parent, false);
         }
 
-        TextView txtViewKegiatan = convertView.findViewById(R.id.txtViewKegiatan);
+        JustifiedTextView txtViewKegiatan = convertView.findViewById(R.id.txtViewKegiatan);
+        JustifiedTextView txtKegiatanWisata = convertView.findViewById(R.id.txtKegiatanWisata);
         ImageView backgroundKegiatan = convertView.findViewById(R.id.backgroundKegiatan);
 
         final DesaWisata dw = (DesaWisata) this.getItem(position);
         txtViewKegiatan.setText(dw.getNama_kegiatan());
+        txtKegiatanWisata.setText(dw.getNama_wisata());
         PicassoClient.downloadImage(c, dw.getFoto(), backgroundKegiatan);
 
         final String nama_kegiatan = dw.getNama_kegiatan();

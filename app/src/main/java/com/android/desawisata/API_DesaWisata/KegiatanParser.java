@@ -72,6 +72,7 @@ public class KegiatanParser extends AsyncTask<Void, Void, Boolean> {
                 String nama_kegiatan = jo.getString("nama_kegiatan");
                 String deskripsi = jo.getString("deskripsi");
                 String foto = jo.getString("foto");
+                String nama_wisata = jo.getString("nama_wisata");
 
                 String link = c.getString(R.string.urlAddress);
                 foto = link+foto;
@@ -81,6 +82,7 @@ public class KegiatanParser extends AsyncTask<Void, Void, Boolean> {
                 dw.setNama_kegiatan(nama_kegiatan);
                 dw.setDeskripsi(deskripsi);
                 dw.setFoto(foto);
+                dw.setNama_wisata(nama_wisata);
 
                 desaWisata.add(dw);
             }
