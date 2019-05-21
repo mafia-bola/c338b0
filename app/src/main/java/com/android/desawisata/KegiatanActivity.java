@@ -66,7 +66,7 @@ public class KegiatanActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Kegiatan");
+        getSupportActionBar().setTitle("Atraksi Wisata");
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
 
         navigationView = findViewById(R.id.navigation_view);
