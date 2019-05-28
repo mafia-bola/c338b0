@@ -69,17 +69,13 @@ public class WisataParser extends AsyncTask<Void, Void, Boolean> {
                 jo = ja.getJSONObject(i);
 
                 int id = jo.getInt("id");
-                int desa_id = jo.getInt("desa_id");
-                String nama_desa = jo.getString("nama_desa");
-                String status = jo.getString("status");
                 String nama_wisata = jo.getString("nama_wisata");
                 String alamat_wisata = jo.getString("alamat_wisata");
-                String sejarah_wisata = jo.getString("sejarah_wisata");
+                String sejarah_wisata = jo.getString("sejarah_desa");
                 String demografi = jo.getString("demografi");
                 String potensi = jo.getString("potensi");
                 double lat = jo.getDouble("lat");
                 double lng = jo.getDouble("lng");
-                int tempat_wisata_id = jo.getInt("tempat_wisata_id");
                 String thumbnail = jo.getString("thumbnail");
 
                 String link = c.getString(R.string.urlAddress);
@@ -87,9 +83,6 @@ public class WisataParser extends AsyncTask<Void, Void, Boolean> {
 
                 dw = new DesaWisata();
                 dw.setId(id);
-                dw.setDesa_id(desa_id);
-                dw.setNama_desa(nama_desa);
-                dw.setStatus(status);
                 dw.setNama_wisata(nama_wisata);
                 dw.setAlamat_wisata(alamat_wisata);
                 dw.setSejarah_wisata(sejarah_wisata);
@@ -97,7 +90,6 @@ public class WisataParser extends AsyncTask<Void, Void, Boolean> {
                 dw.setPotensi(potensi);
                 dw.setLat(lat);
                 dw.setLng(lng);
-                dw.setTempat_wisata_id(tempat_wisata_id);
                 dw.setThumbnail(thumbnail);
 
                 desaWisata.add(dw);

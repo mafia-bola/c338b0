@@ -73,7 +73,7 @@ public class ImageParser extends AsyncTask<Void, Void, Boolean> {
                 jo = ja.getJSONObject(i);
 
                 int id = jo.getInt("id");
-                int tempat_wisata_id = jo.getInt("tempat_wisata_id");
+                int desa_wisata_id = jo.getInt("desa_wisata_id");
                 String file_foto = jo.getString("file");
 
                 String link = c.getString(R.string.urlAddress);
@@ -81,7 +81,7 @@ public class ImageParser extends AsyncTask<Void, Void, Boolean> {
 
                 dw = new DesaWisata();
                 dw.setFoto_id(id);
-                dw.setTempat_wisata_id(tempat_wisata_id);
+                dw.setTempat_wisata_id(desa_wisata_id);
                 dw.setFile_foto(file_foto);
 
                 desaWisata.add(dw);

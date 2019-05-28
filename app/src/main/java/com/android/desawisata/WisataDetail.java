@@ -35,7 +35,7 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
     JustifiedTextView txtSejarahWisata, txtDemografi, txtPotensi;
     GoogleMap mMap;
     Toolbar toolbar;
-    JustifiedTextView txtViewDesa, txtAlamatWisata, txtWisata;
+    JustifiedTextView txtAlamatWisata, txtWisata;
 
 
     @Override
@@ -43,7 +43,6 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wisata_detail);
 
-        txtViewDesa = findViewById(R.id.txtViewDesa);
         txtAlamatWisata = findViewById(R.id.txtAlamatWisata);
         txtSejarahWisata = findViewById(R.id.txtSejarahWisata);
         txtDemografi = findViewById(R.id.txtDemografi);
@@ -56,7 +55,6 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         Intent detail = this.getIntent();
-        String namaDesa = detail.getExtras().getString("NamaDesa");
         String namaWisata = detail.getExtras().getString("NamaWisata");
         String alamatWisata = detail.getExtras().getString("AlamatWisata");
         String sejarahWisata = detail.getExtras().getString("Sejarah");
@@ -64,7 +62,6 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         String potensi = detail.getExtras().getString("Potensi");
         final int tempat_wisata_id = detail.getExtras().getInt("WisataID");
 
-        txtViewDesa.setText("Nama Desa : "+namaDesa);
         txtAlamatWisata.setText("Alamat Lokasi : "+alamatWisata);
         txtWisata.setText(namaWisata);
 

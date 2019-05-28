@@ -150,7 +150,7 @@ public class KegiatanActivity extends AppCompatActivity {
         });
 
         String link = getString(R.string.urlAddress);
-        final String urlAddress = link+"api/kegiatan/";
+        final String urlAddress = link+"api/atraksi/";
 
         lv = findViewById(R.id.lv);
         new KegiatanDownloader(KegiatanActivity.this, urlAddress, lv).execute();
@@ -165,7 +165,7 @@ public class KegiatanActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 String search = newText;
                 String url = getString(R.string.urlAddress);
-                final String urlAddress = url+"api/kegiatan/"+search;
+                final String urlAddress = url+"api/atraksi/"+search;
                 new KegiatanDownloader(KegiatanActivity.this, urlAddress, lv).execute();
 
                 return false;

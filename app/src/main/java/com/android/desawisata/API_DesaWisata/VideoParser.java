@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.desawisata.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -67,10 +69,15 @@ public class VideoParser extends AsyncTask<Void, Void, Boolean> {
                 jo = ja.getJSONObject(i);
 
                 int id = jo.getInt("id");
+                int desa_wisata_id = jo.getInt("desa_wisata_id");
                 String file_video = jo.getString("file");
+
+                String link = c.getString(R.string.urlAddress);
+                file_video = link+file_video;
 
                 dw = new DesaWisata();
                 dw.setVideo_id(id);
+                dw.setTempat_wisata_id(desa_wisata_id);
                 dw.setFile_video(file_video);
 
                 desaWisata.add(dw);

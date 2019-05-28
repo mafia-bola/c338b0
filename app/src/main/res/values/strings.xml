@@ -8,5 +8,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="pencarian">Pencarian</string>
 
-    <string name="urlAddress">http://10.10.10.109/desawisata/public/</string>
+    <string name="urlAddress">http://10.10.10.106/desawisata/public/</string>
 </resources>

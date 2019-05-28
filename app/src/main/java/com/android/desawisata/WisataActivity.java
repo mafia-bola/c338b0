@@ -31,7 +31,7 @@ public class WisataActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ListView lv;
     SearchView sv;
-    JustifiedTextView txtNamaWisata, txtNamaDesa;
+    JustifiedTextView txtNamaWisata;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -62,7 +62,6 @@ public class WisataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_wisata);
 
         txtNamaWisata = findViewById(R.id.txtNamaWisata);
-        txtNamaDesa = findViewById(R.id.txtNamaDesa);
         sv = findViewById(R.id.sv);
 
         toolbar = findViewById(R.id.toolbar);

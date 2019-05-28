@@ -46,16 +46,13 @@ public class WisataAdapter extends BaseAdapter {
         }
 
         TextView txtNamaWisata = convertView.findViewById(R.id.txtNamaWisata);
-        TextView txtNamaDesa = convertView.findViewById(R.id.txtNamaDesa);
         ImageView backgroundDesa = convertView.findViewById(R.id.backgroundDesa);
 
         final DesaWisata dw = (DesaWisata) this.getItem(position);
         txtNamaWisata.setText(dw.getNama_wisata());
-        txtNamaDesa.setText(dw.getNama_desa());
         PicassoClient.downloadImage(c, dw.getThumbnail(), backgroundDesa);
 
-        final String nama_desa = dw.getNama_desa();
-        final String status = dw.getStatus();
+        final int id = dw.getId();
         final String nama_wisata = dw.getNama_wisata();
         final String alamat_wisata = dw.getAlamat_wisata();
         final String sejarah = dw.getSejarah_wisata();
@@ -63,12 +60,11 @@ public class WisataAdapter extends BaseAdapter {
         final String potensi = dw.getPotensi();
         final double lat = dw.getLat();
         final double lng = dw.getLng();
-        final int tempat_wisata_id = dw.getTempat_wisata_id();
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDetail(nama_desa, status, nama_wisata, alamat_wisata, sejarah, demografi, potensi, lat, lng, tempat_wisata_id);
+                openDetail(id, nama_wisata, alamat_wisata, sejarah, demografi, potensi, lat, lng);
             }
         });
 
@@ -76,14 +72,13 @@ public class WisataAdapter extends BaseAdapter {
     }
 
     private void openDetail(
-            String nama_desa, String status,
+            int id,
             String nama_wisata, String alamat_wisata,
             String sejarah_wisata, String demografi, String potensi,
-            double lat, double lng, int tempat_wisata_id
+            double lat, double lng
             ){
         Intent detail = new Intent(c, WisataDetail.class);
-        detail.putExtra("NamaDesa", nama_desa);
-        detail.putExtra("Status", status);
+        detail.putExtra("WisataID", id);
         detail.putExtra("NamaWisata", nama_wisata);
         detail.putExtra("AlamatWisata", alamat_wisata);
         detail.putExtra("Sejarah", sejarah_wisata);
@@ -91,7 +86,6 @@ public class WisataAdapter extends BaseAdapter {
         detail.putExtra("Potensi", potensi);
         detail.putExtra("Latitude", lat);
         detail.putExtra("Longitude", lng);
-        detail.putExtra("WisataID", tempat_wisata_id);
         c.startActivity(detail);
     }
 }

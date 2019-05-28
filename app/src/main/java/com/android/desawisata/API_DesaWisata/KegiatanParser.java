@@ -69,7 +69,7 @@ public class KegiatanParser extends AsyncTask<Void, Void, Boolean> {
                 jo = ja.getJSONObject(i);
 
                 int kegiatan_id = jo.getInt("id");
-                String nama_kegiatan = jo.getString("nama_kegiatan");
+                String nama_kegiatan = jo.getString("nama_atraksi");
                 String deskripsi = jo.getString("deskripsi");
                 String foto = jo.getString("foto");
                 String nama_wisata = jo.getString("nama_wisata");

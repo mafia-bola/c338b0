@@ -81,14 +81,6 @@
                             android:layout_marginBottom="20dp"/>
 
                         <com.uncopt.android.widget.text.justify.JustifiedTextView
-                            android:id="@+id/txtViewDesa"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Nama Desa"
-                            android:textColor="#000"
-                            android:layout_marginBottom="5dp"/>
-
-                        <com.uncopt.android.widget.text.justify.JustifiedTextView
                             android:id="@+id/txtAlamatWisata"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
