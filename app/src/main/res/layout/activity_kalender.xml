@@ -50,16 +50,23 @@
                     app:itemTextColor="#000"
                     app:menu="@menu/tab_item" />
 
-                <ListView
-                    android:id="@+id/lv"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                <ImageView
+                    android:layout_margin="20dp"
+                    android:scaleType="centerCrop"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/contoh_event"/>
 
-                </ListView>
+                <!--&lt;!&ndash;<ListView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/lv"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginTop="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginBottom="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginStart="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginEnd="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="match_parent">&ndash;&gt;-->
+
+                <!--</ListView>-->
 
             </LinearLayout>
 
