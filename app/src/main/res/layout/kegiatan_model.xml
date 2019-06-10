@@ -4,73 +4,55 @@
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
+    android:layout_height="wrap_content">
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/backgroundKegiatan"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="180dp"
             android:scaleType="centerCrop"/>
 
-        <!--<LinearLayout-->
-            <!--android:orientation="vertical"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:layout_margin="20dp">-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/txtViewKegiatan"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:scrollbars="horizontal"-->
-                <!--android:background="#fff"-->
-                <!--android:textColor="#000"-->
-                <!--android:gravity="center"-->
-                <!--android:text="Nama Kegiatan"/>-->
-
-        <!--</LinearLayout>-->
-
-        <LinearLayout
-            android:orientation="vertical"
+        <com.uncopt.android.widget.text.justify.JustifiedTextView
+            android:id="@+id/txtViewKegiatan"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp">
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal"
+            android:text="Atraksi Wisata"/>
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <com.uncopt.android.widget.text.justify.JustifiedTextView
+            android:id="@+id/txtKegiatanWisata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:text="Nama Wisata"/>
 
-                <com.uncopt.android.widget.text.justify.JustifiedTextView
-                    android:id="@+id/txtViewKegiatan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="horizontal"
-                    android:text="Atraksi Wisata"/>
+    </LinearLayout>
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.uncopt.android.widget.text.justify.JustifiedTextView
-                    android:id="@+id/txtKegiatanWisata"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="vertical"
-                    android:text="Nama Wisata"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </FrameLayout>
 
 </androidx.cardview.widget.CardView>
+
+
+    <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_margin="20dp">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/txtViewKegiatan"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:scrollbars="horizontal"-->
+    <!--android:background="#fff"-->
+    <!--android:textColor="#000"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Nama Kegiatan"/>-->
+
+    <!--</LinearLayout>-->

@@ -98,7 +98,7 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         new VideoDownloader(WisataDetail.this, urlVideo, videoList).execute();
 
         listView = findViewById(R.id.listView);
-        final String urlKegiatan = link+"api/atraksi/";
+        final String urlKegiatan = link + "api/kegiatan/" + tempat_wisata_id;
         new AtraksiDownloader(WisataDetail.this, urlKegiatan, listView).execute();
     }
 
