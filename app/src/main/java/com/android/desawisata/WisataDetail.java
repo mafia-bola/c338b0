@@ -4,17 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.MediaController;
-import android.widget.Toast;
-import android.widget.VideoView;
 
+import com.android.desawisata.API_DesaWisata.AtraksiDownloader;
 import com.android.desawisata.API_DesaWisata.ImageDownloader;
 import com.android.desawisata.API_DesaWisata.VideoDownloader;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,20 +19,16 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
 import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 public class WisataDetail extends AppCompatActivity implements OnMapReadyCallback {
 
-    ListView lv;
+    ListView lv, listView;
     ListView videoList;
     JustifiedTextView txtSejarahWisata, txtDemografi, txtPotensi;
     GoogleMap mMap;
     Toolbar toolbar;
     JustifiedTextView txtAlamatWisata, txtWisata;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +96,10 @@ public class WisataDetail extends AppCompatActivity implements OnMapReadyCallbac
         videoList = findViewById(R.id.videoList);
         final String urlVideo = link + "api/wisata/" + tempat_wisata_id + "/video";
         new VideoDownloader(WisataDetail.this, urlVideo, videoList).execute();
+
+        listView = findViewById(R.id.listView);
+        final String urlKegiatan = link+"api/atraksi/";
+        new AtraksiDownloader(WisataDetail.this, urlKegiatan, listView).execute();
     }
 
     @Override

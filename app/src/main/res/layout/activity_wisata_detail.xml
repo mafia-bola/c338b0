@@ -80,6 +80,13 @@
                             android:smoothScrollbar="true"
                             android:layout_marginBottom="20dp"/>
 
+                        <ListView
+                            android:id="@+id/listView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:smoothScrollbar="true"
+                            android:layout_marginBottom="20dp"/>
+
                         <com.uncopt.android.widget.text.justify.JustifiedTextView
                             android:id="@+id/txtAlamatWisata"
                             android:layout_width="match_parent"

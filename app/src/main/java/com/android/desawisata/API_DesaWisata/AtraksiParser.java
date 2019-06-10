@@ -1,0 +1,98 @@
+package com.android.desawisata.API_DesaWisata;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.desawisata.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+public class AtraksiParser extends AsyncTask<Void, Void, Boolean> {
+
+    Context c;
+    String jsonData;
+    ListView listView;
+
+    ProgressDialog pd;
+    ArrayList<DesaWisata> desaWisata = new ArrayList<>();
+
+    public AtraksiParser(Context c, String jsonData, ListView listView) {
+        this.c = c;
+        this.jsonData = jsonData;
+        this.listView = listView;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+
+        pd = new ProgressDialog(c);
+        pd.setTitle("Proses");
+        pd.setMessage("Data sedang di proses ... Mohon Tunggu");
+        pd.show();
+    }
+
+    @Override
+    protected Boolean doInBackground(Void... params) {
+        return this.parseData();
+    }
+
+    @Override
+    protected void onPostExecute(Boolean parsed) {
+        super.onPostExecute(parsed);
+
+        pd.dismiss();
+        if (parsed){
+            AtraksiAdapter adapter = new AtraksiAdapter(c, desaWisata);
+            listView.setAdapter(adapter);
+        } else {
+            Toast.makeText(c, "Data gagal di proses", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private Boolean parseData() {
+        try {
+            JSONArray ja = new JSONArray(jsonData);
+            JSONObject jo;
+
+            desaWisata.clear();
+            DesaWisata dw;
+
+            for (int i=0; i<ja.length(); i++){
+                jo = ja.getJSONObject(i);
+
+                int kegiatan_id = jo.getInt("id");
+                String nama_kegiatan = jo.getString("nama_atraksi");
+                String deskripsi = jo.getString("deskripsi");
+                String foto = jo.getString("foto");
+                String nama_wisata = jo.getString("nama_wisata");
+
+                String link = c.getString(R.string.urlAddress);
+                foto = link+foto;
+
+                dw = new DesaWisata();
+                dw.setKegiatan_id(kegiatan_id);
+                dw.setNama_kegiatan(nama_kegiatan);
+                dw.setDeskripsi(deskripsi);
+                dw.setFoto(foto);
+                dw.setNama_wisata(nama_wisata);
+
+                desaWisata.add(dw);
+            }
+
+            return true;
+
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+}
