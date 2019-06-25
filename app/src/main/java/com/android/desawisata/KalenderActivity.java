@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import com.android.desawisata.API_DesaWisata.KalenderDownloader;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -138,6 +139,12 @@ public class KalenderActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        String link = getString(R.string.urlAddress);
+        final String urlAddress = link+"api/event/";
+
+        lv = findViewById(R.id.lv);
+        new KalenderDownloader(KalenderActivity.this, urlAddress, lv).execute();
 
     }
 }

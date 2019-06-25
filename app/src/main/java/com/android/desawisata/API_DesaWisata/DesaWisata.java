@@ -2,7 +2,7 @@ package com.android.desawisata.API_DesaWisata;
 
 public class DesaWisata {
 
-    int id, kegiatan_id;
+    int id, kegiatan_id, event_id;
     int desa_id, tempat_wisata_id, foto_id, video_id;
     String nama_desa, status, nama_wisata, alamat_wisata, sejarah_wisata, demografi, potensi;
     double lat, lng;
@@ -10,14 +10,8 @@ public class DesaWisata {
     String file_foto;
     String file_video;
     String thumbnail;
-
-    public String getThumbnail() {
-        return thumbnail;
-    }
-
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
-    }
+    String tanggal_event;
+    String file_event;
 
     public int getId() {
         return id;
@@ -33,6 +27,14 @@ public class DesaWisata {
 
     public void setKegiatan_id(int kegiatan_id) {
         this.kegiatan_id = kegiatan_id;
+    }
+
+    public int getEvent_id() {
+        return event_id;
+    }
+
+    public void setEvent_id(int event_id) {
+        this.event_id = event_id;
     }
 
     public int getDesa_id() {
@@ -177,5 +179,29 @@ public class DesaWisata {
 
     public void setFile_video(String file_video) {
         this.file_video = file_video;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public String getTanggal_event() {
+        return tanggal_event;
+    }
+
+    public void setTanggal_event(String tanggal_event) {
+        this.tanggal_event = tanggal_event;
+    }
+
+    public String getFile_event() {
+        return file_event;
+    }
+
+    public void setFile_event(String file_event) {
+        this.file_event = file_event;
     }
 }
