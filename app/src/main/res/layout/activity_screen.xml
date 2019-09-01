@@ -29,6 +29,7 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/gradient"
                 android:contentDescription="@string/descBackground" />
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"

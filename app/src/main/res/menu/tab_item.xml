@@ -10,6 +10,6 @@
         android:icon="@drawable/ic_dashboard_black_24dp"/>
     <item
         android:id="@+id/menuKalender"
-        android:title="Kalender Event"
+        android:title="Event"
         android:icon="@drawable/ic_library_books_black_24dp"/>
 </menu>
